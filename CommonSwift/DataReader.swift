@@ -1,5 +1,5 @@
 /*
- MacWolfEd: Wolf3D editor for Mac
+ CommonSwift library
  Copyright (C) 2018  Ioan Chera
 
  This program is free software: you can redistribute it and/or modify
@@ -23,6 +23,7 @@ import Foundation
 //
 public enum DataReaderError: Error {
     case endOfData
+    case readError
 }
 
 //
@@ -37,6 +38,17 @@ public class DataReader {
     //
     public init(data: Data) {
         self.data = data
+    }
+
+    //
+    // Reads 1 byte
+    //
+    public func readUInt8() throws -> UInt8 {
+        if position >= data.count {
+            throw DataReaderError.endOfData
+        }
+        position += 1
+        return data[position - 1]
     }
 
     //
@@ -81,6 +93,30 @@ public class DataReader {
         for _ in stride(from: 0, to: count, by: 1) {
             result.append(try readInt32())
         }
+        return result
+    }
+
+    //
+    // Reads a string stored as a null-terminated data
+    //
+    public func readCString(length: Int) throws -> String {
+        if position + length > data.count {
+            throw DataReaderError.endOfData
+        }
+        var subdata = data.subdata(in: position ..< position + length)
+
+        // Truncate it now
+        for pos in stride(from: 0, to: subdata.count, by: 1) {
+            if subdata[pos] == 0 {
+                subdata.removeSubrange(pos..<subdata.count)
+                break
+            }
+        }
+
+        guard let result = String(bytes: subdata, encoding: .utf8) else {
+            throw DataReaderError.readError
+        }
+        position += length
         return result
     }
 

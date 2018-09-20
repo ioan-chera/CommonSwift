@@ -1,5 +1,5 @@
 /*
- MacWolfEd: Wolf3D editor for Mac
+ CommonSwift library
  Copyright (C) 2018  Ioan Chera
 
  This program is free software: you can redistribute it and/or modify
