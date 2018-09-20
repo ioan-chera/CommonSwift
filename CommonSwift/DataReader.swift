@@ -21,28 +21,28 @@ import Foundation
 //
 // Error handling
 //
-enum DataReaderError: Error {
+public enum DataReaderError: Error {
     case endOfData
 }
 
 //
 // Data stream reader. Supports endianness (default: LE)
 //
-class DataReader {
+public class DataReader {
     private let data: Data  // the data to read
     private var position = 0
 
     //
     // init with data
     //
-    init(data: Data) {
+    public init(data: Data) {
         self.data = data
     }
 
     //
     // Returns 2 bytes. Throws if out of bounds.
     //
-    func readUInt16() throws -> UInt16 {
+    public func readUInt16() throws -> UInt16 {
         if position + 1 >= data.count {
             throw DataReaderError.endOfData
         }
@@ -53,7 +53,7 @@ class DataReader {
     //
     // Returns 4 bytes
     //
-    func readInt32() throws -> Int32 {
+    public func readInt32() throws -> Int32 {
         if position + 3 >= data.count {
             throw DataReaderError.endOfData
         }
@@ -65,7 +65,7 @@ class DataReader {
     //
     // Returns an array of such bytes
     //
-    func readUInt16Array(count: Int) throws -> [UInt16] {
+    public func readUInt16Array(count: Int) throws -> [UInt16] {
         var result = [UInt16]()
         for _ in stride(from: 0, to: count, by: 1) {
             result.append(try readUInt16())
@@ -76,7 +76,7 @@ class DataReader {
     //
     // Returns an array of such bytes
     //
-    func readInt32Array(count: Int) throws -> [Int32] {
+    public func readInt32Array(count: Int) throws -> [Int32] {
         var result = [Int32]()
         for _ in stride(from: 0, to: count, by: 1) {
             result.append(try readInt32())
@@ -87,7 +87,7 @@ class DataReader {
     //
     // Seeks to a position
     //
-    func seek(position: Int) throws {
+    public func seek(position: Int) throws {
         if position > data.count || position < 0 {
             throw DataReaderError.endOfData
         }
