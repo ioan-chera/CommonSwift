@@ -10,6 +10,7 @@
 		4FFE85002152FD6500B721F9 /* CommonSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FFE84F62152FD6500B721F9 /* CommonSwift.framework */; };
 		4FFE85052152FD6500B721F9 /* CommonSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFE85042152FD6500B721F9 /* CommonSwiftTests.swift */; };
 		4FFE85072152FD6500B721F9 /* CommonSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FFE84F92152FD6500B721F9 /* CommonSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4FFE851121535B8D00B721F9 /* DataReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFE851021535B8D00B721F9 /* DataReader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		4FFE84FF2152FD6500B721F9 /* CommonSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommonSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FFE85042152FD6500B721F9 /* CommonSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonSwiftTests.swift; sourceTree = "<group>"; };
 		4FFE85062152FD6500B721F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FFE851021535B8D00B721F9 /* DataReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataReader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				4FFE84F92152FD6500B721F9 /* CommonSwift.h */,
+				4FFE851021535B8D00B721F9 /* DataReader.swift */,
 				4FFE84FA2152FD6500B721F9 /* Info.plist */,
 			);
 			path = CommonSwift;
@@ -148,6 +151,7 @@
 				TargetAttributes = {
 					4FFE84F52152FD6500B721F9 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 					4FFE84FE2152FD6500B721F9 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -194,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FFE851121535B8D00B721F9 /* DataReader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +343,7 @@
 		4FFE850B2152FD6500B721F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -357,6 +363,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.i-chera.CommonSwift";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -364,6 +371,7 @@
 		4FFE850C2152FD6500B721F9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -390,6 +398,7 @@
 		4FFE850E2152FD6500B721F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 66L236F264;
@@ -408,6 +417,7 @@
 		4FFE850F2152FD6500B721F9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 66L236F264;
