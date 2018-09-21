@@ -100,10 +100,7 @@ public class DataReader {
     // Reads a string stored as a null-terminated data
     //
     public func readCString(length: Int) throws -> String {
-        if position + length > data.count {
-            throw DataReaderError.endOfData
-        }
-        var subdata = data.subdata(in: position ..< position + length)
+        var subdata = try readData(length: length)
 
         // Truncate it now
         for pos in stride(from: 0, to: subdata.count, by: 1) {
@@ -118,6 +115,16 @@ public class DataReader {
         }
         position += length
         return result
+    }
+
+    //
+    // Reads subdata
+    //
+    public func readData(length: Int) throws -> Data {
+        if position + length > data.count {
+            throw DataReaderError.endOfData
+        }
+        return data.subdata(in: position ..< position + length)
     }
 
     //
