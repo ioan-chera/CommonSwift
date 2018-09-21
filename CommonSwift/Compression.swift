@@ -103,11 +103,17 @@ public enum Compress {
         var pos = 0
         var value, count: UInt16
         repeat {
+            if pos >= source.count {
+                return result
+            }
             value = source[pos]
             pos += 1
             if value != tag {
                 result.append(value)
             } else {
+                if pos + 1 >= source.count {
+                    return result
+                }
                 count = source[pos]
                 value = source[pos + 1]
                 pos += 2
