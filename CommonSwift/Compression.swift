@@ -30,10 +30,10 @@ public enum Compress {
     // Expand Carmack-like
     // Length is the length of the EXPANDED data
     //
-    public static func carmackExpand(source: [UInt8], length lengthBytes: Int) throws -> [UInt16] {
+    public static func carmackExpand(source: Data, length lengthBytes: Int) throws -> [UInt16] {
         var length = lengthBytes / 2
 
-        let reader = DataReader(data: Data(bytes: source))
+        let reader = DataReader(data: source)
 
         var ch: UInt16
         var chhigh: UInt16
