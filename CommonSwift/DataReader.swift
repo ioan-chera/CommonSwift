@@ -75,6 +75,18 @@ public class DataReader {
     }
 
     //
+    // Returns 4 bytes
+    //
+    public func readUInt32() throws -> UInt32 {
+        if position + 3 >= data.count {
+            throw DataReaderError.endOfData
+        }
+        position += 4
+        return UInt32(data[position - 4]) + (UInt32(data[position - 3]) << 8) +
+            (UInt32(data[position - 2]) << 16) + (UInt32(data[position - 1]) << 24)
+    }
+
+    //
     // Returns an array of such bytes
     //
     public func readUInt16Array(count: Int) throws -> [UInt16] {
@@ -92,6 +104,17 @@ public class DataReader {
         var result = [Int32]()
         for _ in stride(from: 0, to: count, by: 1) {
             result.append(try readInt32())
+        }
+        return result
+    }
+
+    //
+    // Returns an array of such bytes
+    //
+    public func readUInt32Array(count: Int) throws -> [UInt32] {
+        var result = [UInt32]()
+        for _ in stride(from: 0, to: count, by: 1) {
+            result.append(try readUInt32())
         }
         return result
     }
