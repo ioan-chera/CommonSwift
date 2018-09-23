@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4F3248D1215698BA00CC8862 /* CSWholeValidatedToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3248D0215698BA00CC8862 /* CSWholeValidatedToolbar.swift */; };
+		4F3248DC21579DCF00CC8862 /* DataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3248DB21579DCF00CC8862 /* DataHelpers.swift */; };
 		4F359FE921542D2900F8C6FF /* PathHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F359FE821542D2900F8C6FF /* PathHelpers.swift */; };
 		4F359FEB2154317900F8C6FF /* Compression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F359FEA2154317900F8C6FF /* Compression.swift */; };
 		4FFE85002152FD6500B721F9 /* CommonSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FFE84F62152FD6500B721F9 /* CommonSwift.framework */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		4F3248D0215698BA00CC8862 /* CSWholeValidatedToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSWholeValidatedToolbar.swift; sourceTree = "<group>"; };
+		4F3248DB21579DCF00CC8862 /* DataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHelpers.swift; sourceTree = "<group>"; };
 		4F359FE821542D2900F8C6FF /* PathHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathHelpers.swift; sourceTree = "<group>"; };
 		4F359FEA2154317900F8C6FF /* Compression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compression.swift; sourceTree = "<group>"; };
 		4FFE84F62152FD6500B721F9 /* CommonSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommonSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +84,7 @@
 				4FFE84F92152FD6500B721F9 /* CommonSwift.h */,
 				4F359FEA2154317900F8C6FF /* Compression.swift */,
 				4F3248D0215698BA00CC8862 /* CSWholeValidatedToolbar.swift */,
+				4F3248DB21579DCF00CC8862 /* DataHelpers.swift */,
 				4FFE851021535B8D00B721F9 /* DataReader.swift */,
 				4FFE84FA2152FD6500B721F9 /* Info.plist */,
 				4F359FE821542D2900F8C6FF /* PathHelpers.swift */,
@@ -210,6 +213,7 @@
 			files = (
 				4F359FEB2154317900F8C6FF /* Compression.swift in Sources */,
 				4F359FE921542D2900F8C6FF /* PathHelpers.swift in Sources */,
+				4F3248DC21579DCF00CC8862 /* DataHelpers.swift in Sources */,
 				4F3248D1215698BA00CC8862 /* CSWholeValidatedToolbar.swift in Sources */,
 				4FFE851121535B8D00B721F9 /* DataReader.swift in Sources */,
 			);
