@@ -26,7 +26,7 @@ public extension Data {
     ///
     /// Transpose, assuming it represents a matrix
     ///
-    public func transpose(originalWidth: Int) -> Data {
+    public func transposed(originalWidth: Int) -> Data {
         let originalHeight = count / originalWidth
         var result = Data()
         for x in 0 ..< originalWidth {
