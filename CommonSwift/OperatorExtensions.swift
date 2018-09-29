@@ -23,10 +23,40 @@ public func + (left: NSPoint, right: NSPoint) -> NSPoint {
     return NSPoint(x: left.x + right.x, y: left.y + right.y)
 }
 
-/// NSRect-NSPoint addition
+/// NSPoint-NSSize addition => NSPoint again
+public func + (left: NSPoint, right: NSSize) -> NSPoint {
+    return NSPoint(x: left.x + right.width, y: left.y + right.height)
+}
+public func + (left: NSSize, right: NSPoint) -> NSPoint {
+    return NSPoint(x: left.width + right.x, y: left.height + right.y)
+}
+
+/// NSRect-NSPoint addition => NSRect
 public func + (left: NSRect, right: NSPoint) -> NSRect {
     return NSRect(origin: left.origin + right, size: left.size)
 }
 public func + (left: NSPoint, right: NSRect) -> NSRect {
     return NSRect(origin: left + right.origin, size: right.size)
+}
+
+/// NSRect-NSSize addition => NSRect
+public func + (left: NSRect, right: NSSize) -> NSRect {
+    return NSRect(origin: left.origin + right, size: left.size)
+}
+public func + (left: NSSize, right: NSRect) -> NSRect {
+    return NSRect(origin: left + right.origin, size: right.size)
+}
+
+/// NSSize-CGFloat division
+public func * (left: CGFloat, right: NSSize) -> NSSize {
+    return NSSize(width: left * right.width, height: left * right.height)
+}
+public func * (left: Int, right: NSSize) -> NSSize {
+    return CGFloat(left) * right
+}
+public func / (left: NSSize, right: CGFloat) -> NSSize {
+    return NSSize(width: left.width / right, height: left.height / right)
+}
+public func / (left: NSSize, right: Int) -> NSSize {
+    return left / CGFloat(right)
 }
