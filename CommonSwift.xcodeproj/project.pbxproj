@@ -163,7 +163,7 @@
 				TargetAttributes = {
 					4FFE84F52152FD6500B721F9 = {
 						CreatedOnToolsVersion = 9.4.1;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1160;
 					};
 					4FFE84FE2152FD6500B721F9 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -177,6 +177,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 4FFE84EC2152FD6500B721F9;
 			productRefGroup = 4FFE84F72152FD6500B721F9 /* Products */;
@@ -381,7 +382,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -408,7 +409,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.i-chera.CommonSwift";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
